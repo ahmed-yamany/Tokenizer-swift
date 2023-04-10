@@ -11,7 +11,7 @@ import SwiftUI
 struct TokenizerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TokeizerView()
         }
     }
 }
