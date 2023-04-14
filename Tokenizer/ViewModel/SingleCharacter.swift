@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Dictionary that maps single-character lexemes to token types
 let SINGLE_CHARACTER_TOKENS = [
     "+" : "PLUS",
     "-" : "MINUS",
@@ -14,21 +15,36 @@ let SINGLE_CHARACTER_TOKENS = [
     "/" : "DEVIATION",
     "(" : "RIGHTPAREN",
     ")" : "LEFTPAREN",
-    "." : "DOT",
-    "," : "COMA",
-    " " : "SPACE",
     "=" : "EQUAL",
     "\n" : "NEWLINE"
 ]
 
 struct SingleCharacter {
     
-    static func isSingleCharToken(char: String) -> Bool {
-        return SINGLE_CHARACTER_TOKENS.keys.contains(char)
+    // Checks if a given lexeme is a single-character token
+    static func isSingleCharToken(from lexem: String) -> Bool {
+        return SINGLE_CHARACTER_TOKENS.keys.contains(lexem)
     }
     
+    // Get the token type for a given single-character lexeme
     static func getSingleCharToken(char: Character) -> String{
         return SINGLE_CHARACTER_TOKENS[String(char)]!
     }
     
+    // Create a single-character token from a given lexeme and index
+    static func makeSingleCharToken(from lexeme: String, start: Int, end: Int) -> Token? {
+        
+        // Check if the lexeme is a single-character token
+        if isSingleCharToken(from: lexeme) {
+            
+            // Create a new Token object
+            return Token(start: start, end: end,
+                         type: SingleCharacter.getSingleCharToken(char: Character(lexeme)),
+                         value: lexeme)
+            
+        }
+        
+        // If the lexeme is not a single-character token, return nil
+        return nil
+    }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		735EA50E29E98B1C00779122 /* MultiCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735EA50D29E98B1C00779122 /* MultiCharacter.swift */; };
 		736444F729E4177300A80EEC /* TokenizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736444F629E4177300A80EEC /* TokenizerApp.swift */; };
 		736444F929E4177300A80EEC /* TokeizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736444F829E4177300A80EEC /* TokeizerView.swift */; };
 		736444FB29E4177400A80EEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 736444FA29E4177400A80EEC /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		735EA50D29E98B1C00779122 /* MultiCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCharacter.swift; sourceTree = "<group>"; };
 		736444F329E4177300A80EEC /* Tokenizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tokenizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		736444F629E4177300A80EEC /* TokenizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerApp.swift; sourceTree = "<group>"; };
 		736444F829E4177300A80EEC /* TokeizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokeizerView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				7364450529E4178900A80EEC /* SingleCharacter.swift */,
 				7364450629E4178900A80EEC /* Tokenizer.swift */,
+				735EA50D29E98B1C00779122 /* MultiCharacter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			files = (
 				736444F929E4177300A80EEC /* TokeizerView.swift in Sources */,
 				7364450B29E4178A00A80EEC /* Tokenizer.swift in Sources */,
+				735EA50E29E98B1C00779122 /* MultiCharacter.swift in Sources */,
 				7364450C29E4178A00A80EEC /* String+.swift in Sources */,
 				7364450D29E4178A00A80EEC /* Token.swift in Sources */,
 				736444F729E4177300A80EEC /* TokenizerApp.swift in Sources */,

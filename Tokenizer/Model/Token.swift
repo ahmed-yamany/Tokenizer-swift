@@ -11,7 +11,9 @@ import Foundation
 struct Token: Identifiable {
     var id = UUID()
     
-    let index: Int
+//    let index: Int
+    let start: Int
+    let end: Int
     let type: String
     let value: String
 }

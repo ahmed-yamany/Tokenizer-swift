@@ -12,18 +12,16 @@ struct TokeizerView: View {
     @State var isOn: Bool = false
     @State var tokens: [Token] = []
     
+    @State var error = ""
+    
     var body: some View {
         VStack(spacing: 30.0) {
             
             
-                TextField("Enter a source code to tokenize it", text: $text)
-                    .textInputAutocapitalization(.never)
-                    .disableAutocorrection(true)
-
-            HStack {
-                Text("Ignore white spaces? ")
-                Toggle("", isOn: $isOn)
-            }
+            TextField("Enter a source code to tokenize it", text: $text)
+                .textInputAutocapitalization(.never)
+                .disableAutocorrection(true)
+            
             
             VStack {
                 
@@ -46,10 +44,9 @@ struct TokeizerView: View {
                                         Spacer()
                                         Text(token.type)
                                         Spacer()
-                                        Text("\(token.index)")
+                                        Text("\(token.end)")
                                     }
                                     Divider()
-
                                 }
                             }
                             else {
@@ -58,10 +55,9 @@ struct TokeizerView: View {
                                     Spacer()
                                     Text(token.type)
                                     Spacer()
-                                    Text("\(token.index)")
+                                    Text("\(token.end)")
                                 }
                                 Divider()
-
 
                             }
                         }
@@ -70,23 +66,26 @@ struct TokeizerView: View {
             }
             
             Spacer()
-
+            
+            if error != "" {
+                Text(error)
+            }
             Button {
-                
-                let tokenizer = Tokenizer(text: text)
-                tokenizer.tokenize()
-                tokens = tokenizer.tokens
-
-                
-                
+                if text != "" {
+                    let tokenizer = Tokenizer(text: text)
+                    tokenizer.tokenize()
+                    tokens = tokenizer.tokens
+                    
+                    error = tokenizer.sysntaxError
+                }
             } label: {
                 Text("Tokenize")
                     .frame(width: 200, height: 44)
                     .background(Color.blue)
-                    .foregroundColor(Color(uiColor: .label))
+                    .foregroundColor(.white)
                     .cornerRadius(8)
                     .shadow(radius: 0.5, x: 1, y: 1)
-                    .shadow(color: Color(uiColor: .blue), radius: 4)
+                    .shadow(color: Color(uiColor: .label), radius: 4)
             }
             
         }
